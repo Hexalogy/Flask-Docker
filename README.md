@@ -6,6 +6,15 @@ sudo apt install docker-compose
 ```
 
 Create Flask file (app.py):
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Flask dockerized!"
+```
 
 Create Dockerfile:
 ```
@@ -29,7 +38,7 @@ Create requirements.txt:
 Flask==0.10.1
 ```
 
-Create Docker-Compose.yaml:
+Create Docker-Compose.yaml (Docker-compose > see DOCKERFILE > then Build):
 ```
 version: "3.7"
 
