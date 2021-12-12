@@ -1,8 +1,20 @@
-Install Docker and Docker Compose:
+Create app.py:
+```
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+   return "Hello, World!"
+
+if __name__ == "__main__":
+   app.run(host='0.0.0.0', port=5000)
+```
+
+Install Docker:
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo apt install docker-compose
 ```
 
 Create Flask file (app.py):
