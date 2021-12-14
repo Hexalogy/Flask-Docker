@@ -67,5 +67,4 @@ services:
 Start the service:
 ```sudo docker-compose up```
 
-Why cant i access it on the browser? missing NGINX?
 Next is to integrate it with Jenkins and Github?
