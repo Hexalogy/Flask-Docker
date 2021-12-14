@@ -42,7 +42,7 @@ Create **requirements.txt**:
 Flask==0.10.1
 ```
 
-Create **Docker-Compose.yaml** (Docker-compose > see DOCKERFILE > then Build):
+Create **docker-Compose.yaml** (Docker-compose > see DOCKERFILE > then Build):
 ```
 version: "3.7"
 
