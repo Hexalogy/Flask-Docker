@@ -1,36 +1,26 @@
+
 ## Containerizing Flask with AWS EC2
 
-Create app.py:
+Install **Docker**:
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+Create Flask file (**app.py**):
 ```
 from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-   return "Hello, World!"
+   return "Flask dockerized!!"
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000)
 ```
 
-Install Docker:
-```
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-Create Flask file (app.py):
-```
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Flask dockerized!"
-```
-
-Create Dockerfile:
+Create **Dockerfile**:
 ```
 # Use the Python 3.8 container image
 FROM python:3.8
@@ -47,12 +37,12 @@ ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
 
-Create requirements.txt:
+Create **requirements.txt**:
 ```
 Flask==0.10.1
 ```
 
-Create Docker-Compose.yaml (Docker-compose > see DOCKERFILE > then Build):
+Create **Docker-Compose.yaml** (Docker-compose > see DOCKERFILE > then Build):
 ```
 version: "3.7"
 
@@ -67,4 +57,4 @@ services:
 Start the service:
 ```sudo docker-compose up```
 
-Next is to integrate it with Jenkins and Github?
+Next is to create **CI/CD pipeline** and integrate it with **Jenkins** and **Github**?
