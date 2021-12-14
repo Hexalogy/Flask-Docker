@@ -1,4 +1,4 @@
-## Containerizing Flash with AWS EC2
+## Containerizing Flask with AWS EC2
 
 Create app.py:
 ```
