@@ -47,21 +47,39 @@ Flask==0.10.1
 
 Build the Docker image and set the name:
 ```
-sudo docker build -t flask-container .
+docker build -t flask-container .
 ```
 
 Run the container with a custom name:
 
+> The Flask app will run in the container in detached mode and will be exposed to your local system on port 5000.
+
 ```
-sudo docker run -d flask-container
+docker run -dp 5000:5000 flask-container
 ```
 
 # Troubleshoot
+Stopping container:
 ```
-docker kill
-docker ps -a
-docker images
+docker kill [CONTAINER_ID]
+```
+Test to see if Flask is working:
+```
 curl localhost:5000
+```
+
+## Cleaning images
+List all containers:
+```
+docker ps -a
+```
+Remove stopped containers:
+```
+docker rm [CONTAINER_ID]
+```
+Deleting unused images:
+```
+docker image prune
 ```
 
 Next is to create **CI/CD pipeline** and integrate it with **Jenkins** and **Github**?
