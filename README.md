@@ -1,5 +1,6 @@
 
-## Containerizing Flask with AWS EC2
+
+# Containerizing Flask with AWS EC2
 
 Install **Docker**:
 ```
@@ -42,19 +43,25 @@ Create **requirements.txt**:
 Flask==0.10.1
 ```
 
-Create **docker-Compose.yaml** (Docker-compose > see DOCKERFILE > then Build):
-```
-version: "3.7"
+## Running the service
 
-services:
-  helloworld:
-    build:
-      context: ./
-    ports:
-      - 5000:5000
+Build the Docker image and set the name:
+```
+sudo docker build -t flask-container .
 ```
 
-Start the service:
-```sudo docker-compose up```
+Run the container with a custom name:
+
+```
+sudo docker run -d flask-container
+```
+
+# Troubleshoot
+```
+docker kill
+docker ps -a
+docker images
+curl localhost:5000
+```
 
 Next is to create **CI/CD pipeline** and integrate it with **Jenkins** and **Github**?
