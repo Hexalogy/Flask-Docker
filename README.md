@@ -2,7 +2,8 @@
 
 # Containerizing Flask with AWS EC2
 
-Trying to make my resume to show through dockerized Flask
+Trying to make my resume to show through dockerized Flask:
+http://ec2-34-227-162-199.compute-1.amazonaws.com:5000/
 
 Install **Docker**:
 ```
