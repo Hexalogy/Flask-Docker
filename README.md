@@ -2,6 +2,8 @@
 
 # Containerizing Flask with AWS EC2
 
+Trying to make my resume to show through dockerized Flask
+
 Install **Docker**:
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
